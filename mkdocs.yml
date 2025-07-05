@@ -1,0 +1,110 @@
+# 这里被改过 #
+site_name: Robot Swerve Skeleton
+site_url: https://robotics-hubs.github.io/Robot-Swerve-Skeleton/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: red
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: media/team_logo.png
+  favicon: media/team_logo.png
+  icon:
+    annotation: material/arrow-right-circle 
+  features:
+    - content.tooltips
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - content.code.select.title
+    - toc.follow
+    - content.tabs.link
+    - search.share
+    - search.highlight
+    - search.suggest
+    - announce.dismiss
+    - navigation.instant
+    - navigation.footer
+
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator:
+        !!python/name:material.extensions.emoji.to_svg # Page tree
+
+
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.details
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - javascripts/tex-mml-chtml.js
+
+
+# sidebar settings
+nav:
+    - Home: index.md
+    - Technical Specification: 
+        - 1 Robot Localization: 
+            - 1.1 Odometry: "./technical specification/1 - robot localization/1.1 - odometry.md"
+            - 1.2 Vision: "./technical specification/1 - robot localization/1.2 - vision.md"
+            - 1.3 Combining Vision and Odometry : "./technical specification/1 - robot localization/1.3 - combining vision and odometry observations.md"
+        - 2 Drivetrain Control: 
+            - 2.1 Running Drivetrain Characterization: "./technical specification/2 - drivetrain control/2.1 running drivetrain characterizations.md"
+            - 2.2 Fine-tuning the Gains: "./technical specification/2 - drivetrain control/2.2 fine-tuning the gains.md"
+            - 2.3 Implementing Module Forces Feedforwards: "./technical specification/2 - drivetrain control/2.3 implementing module forces feedforward.md"
+        - 3 Heading Control: 
+            - 3.1 Face to Rotation: "./technical specification/3 - heading control/3.1 - face to rotation.md"
+            - 3.2 Aim at Target: "./technical specification/3 - heading control/3.2 - aiming at target.md"
+        - 4 Apriltag Auto Alignment: 
+            - 4.1 Path Finding: "./technical specification/4 - apriltag auto alignment/4.1 - path finding.md"
+            - 4.2 Precise Alignment: "./technical specification/4 - apriltag auto alignment/4.2 - precise alginment.md"
+    - Usages:
+        - 1 Getting Started: "./usage/1 - getting started.md"
+        - 2 Calibrating your Drivetrain: "./usage/2 - generating constants using phoenix tuner.md"
+        - 3 Running Drive Characterizations: "./usage/3 - running drivetrain characterizations.md"
+        - 4 Setting Up Vision: "./usage/4 - setting up vision.md"
+        - 5 Using Drive Commands: "./usage/5 - using drivetrain commands.md"
+        - 6 Testing Code in Simulation: "./usage/6 - running code in simulator.md"
+        - 7 Debugging with Log-Replay Technology: "./usage/7 - debugging with log-replay.md"
+        - Help & Support: "./usage/help and support.md"
